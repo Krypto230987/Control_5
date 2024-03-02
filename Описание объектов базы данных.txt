@@ -1,0 +1,36 @@
+Описание объектов базы данных:
+
+Таблицы:
+
+warehouses - склады
+categories - категории товаров
+brands - бренды товаров
+products - товары
+suppliers - поставщики
+stock - остатки товаров на складах
+receipts - поступления товаров на склады
+issues - выдачи товаров со складов
+transfers - перемещения товаров между складами
+
+Поля:
+id - идентификатор записи
+name - наименование
+category_id - идентификатор категории
+brand_id - идентификатор бренда
+quantity - количество
+date - дата
+
+Связи(Ключи):
+products.category_id ссылается на categories.id
+products.brand_id ссылается на brands.id
+stock.warehouse_id ссылается на warehouses.id
+stock.product_id ссылается на products.id
+receipts.supplier_id ссылается на suppliers.id
+receipts.warehouse_id ссылается на warehouses.id
+receipts.product_id ссылается на products.id
+issues.supplier_id ссылается на suppliers.id
+issues.warehouse_id ссылается на warehouses.id
+issues.product_id ссылается на products.id
+transfers.from_warehouse_id ссылается на warehouses.id
+transfers.to_warehouse_id ссылается на warehouses.id
+transfers.product_id ссылается на products.id
